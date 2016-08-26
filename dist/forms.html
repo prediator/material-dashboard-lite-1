@@ -264,23 +264,57 @@
 
         <div class="mdl-layout__drawer">
             <header>darkboard</header>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="index.html">
-                    <i class="material-icons" role="presentation">dashboard</i>
-                    Dashboard
-                </a>
-                <a class="mdl-navigation__link mdl-navigation__link--current" href="forms.html">
-                    <i class="material-icons" role="presentation">person</i>
-                    Account
-                </a>
+			  
+      <nav   class="mdl-navigation">
+		<div id="sidedrawer">
 
-                <div class="mdl-layout-spacer"></div>
-                <a class="mdl-navigation__link" href="https://github.com/CreativeIT/getmdl-dashboard">
-                    <i class="material-icons" role="presentation">link</i>
-                    GitHub
-                </a>
-            </nav>
-        </div>
+			<ul>
+				<li><strong> <a
+						class="mdl-navigation__link mdl-navigation__link--current"
+						data-th-href="@{/}"> <i class="material-icons">important_devices</i>
+							Dashboard
+					</a>
+				</strong></li>
+
+				<li ><strong>
+					<a class="mdl-navigation__link havesub_nav" href="javascript:void(0);"> 
+						<i	class="material-icons" role="presentation">create</i> 
+						Accounts
+						<i class="material-icons arrow_invert" role="presentation">chevron_right</i>
+					</a>
+					
+				</strong>
+					<ul class="sub_nav">
+
+						<li  ><a
+							class="mdl-navigation__link"
+							data-th-href="@{/invoice/create(tag=vb)}"> <i
+								class="material-icons" role="presentation"
+								style="font-size: 16px; margin-left: 30px; width: 0px;">chevron_right</i>
+								Ledger
+						</a></li>
+
+						<li  ><a
+							class="mdl-navigation__link"
+							data-th-href="@{/invoice/create(tag=bv)}"> <i
+								class="material-icons" role="presentation"
+								style="font-size: 16px; margin-left: 30px; width: 0px;">chevron_right</i>
+								Invoice
+						</a></li>
+
+					</ul></li>
+					
+					</ul>
+
+            <div class="mdl-layout-spacer"></div>
+			<div class="mdl-layout-bottom">
+            <a class="mdl-navigation__link " href="https://github.com/CreativeIT/getmdl-dashboard">
+                <i class="material-icons" role="presentation">link</i>
+                GitHub
+            </a>
+			</div>
+        </nav>
+    </div>
 
         <main class="mdl-layout__content mdl-color--grey-100">
             <div class="mdl-card mdl-shadow--2dp employer-form" action="#">
@@ -499,6 +533,7 @@
     </div>
 
 <!-- inject:js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.js"></script>
 <script src="js/d3.js"></script>
 <script src="js/getmdl-select.min.js"></script>
 <script src="js/material.js"></script>
@@ -509,6 +544,16 @@
 <script src="js/widgets/table/table.js"></script>
 <script src="js/widgets/todo/todo.js"></script>
 <!-- endinject -->
+
+<script>
+			$(document).ready(function() {
+				$('.havesub_nav').click(function(){
+					$('.arrow_invert').toggleClass("transform_arrow");
+					$('.sub_nav').slideToggle(200);
+				});
+			}); 
+		</script>
+
 
 </body>
 </html>
