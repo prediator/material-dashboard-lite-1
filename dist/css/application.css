@@ -970,8 +970,40 @@ ul, ol {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing: 0; }
+  letter-spacing: 0; 
+  margin: 0;}
+  
+  /**
+  * Side menu LI UI
+  */
 
+  #sidedrawer ul {
+	list-style: none;
+}
+
+#sidedrawer>ul {
+	padding-left: 0px;
+}
+
+#sidedrawer>ul>li:first-child {
+	padding-top: 15px;
+	
+}
+
+#sidedrawer strong {
+	display: block;
+	cursor: pointer;
+}
+
+#sidedrawer strong:hover {
+	
+}
+
+#sidedrawer strong+ul>li {
+	padding: 0px 0px;
+  
+}
+  
 /**
  * Class Name Styles
  */
@@ -7106,7 +7138,15 @@ input.mdl-button[type="submit"] {
       display: none; } }
   .mdl-layout--no-drawer-button .mdl-layout__drawer-button {
     display: none; }
-
+	
+ 
+	
+.mdl-layout-bottom
+{
+    bottom: 0;
+    position: absolute;
+    width: calc(100% - 0px);
+}
 .mdl-layout__header {
   display: flex;
   flex-direction: column;
@@ -10678,11 +10718,16 @@ main {
     letter-spacing: 1px; }
   .mdl-layout__drawer .mdl-navigation {
     flex-grow: 1;
-    padding-top: 48px;
+    padding-top: 0px;
     padding-bottom: 8px; }
     .mdl-layout__drawer .mdl-navigation .mdl-layout-spacer {
       border-bottom: 1px solid rgba(255,255,255, 0.1);
-      margin-bottom: 8px; }
+      margin-bottom: 8px;
+	bottom: 45px;
+    position: fixed;
+    width: calc(100% - 0px);
+
+	  }
     .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       font-size: 13px;
@@ -10690,8 +10735,23 @@ main {
       padding: 12px 0;
       position: relative; }
       .mdl-layout__drawer .mdl-navigation .mdl-navigation__link .material-icons {
-        font-size: 22px;
-        width: 22px; }
+        font-size: 24px;
+        width: 18px; 
+		line-height: 30px;}
+		
+	.mdl-layout__drawer .mdl-navigation .mdl-navigation__link .material-icons.arrow_invert
+	{
+		float: right;
+		
+		transition-duration: 0.6s;
+		-webkit-transition-duration: 0.6s;
+	}
+	.transform_arrow
+	{
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+	}
+	.sub_nav{display:none;}
       .mdl-layout__drawer .mdl-navigation .mdl-navigation__link .material-icons {
         margin: -3px 25px 0 23px;
         color: rgba(255, 255, 255, 0.56); }
